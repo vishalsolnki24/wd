@@ -1,0 +1,499 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//Dtd HTML 4.0 transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><title>
+	: Online Job Application System :
+</title>
+    <script src="Jscript/jquery-311.min.js"></script>
+    <script src="Jscript/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        #popup {
+            display: none;
+            position: absolute;
+            margin: 0 auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0px 0px 50px 2px #000;
+        }
+
+        .loadBg {
+            background-color: rgb(0, 0, 0);
+            height: 100%;
+            left: 0;
+            opacity: 0.7;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            /*z-index: 99998;*/
+        }
+    </style>
+    <script src="Jscript/jquery.js">
+    $("#close").on("click", function (e) {
+            e.preventDefault();
+            $("#bgspan").removeClass("loadBg");
+            $("#popup").fadeOut(1000);
+        });
+
+    </script>
+
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('#myModal').modal('show');
+        });
+    </script>
+</head>
+<body>
+    <form method="post" action="./Home.aspx" id="form1" style="margin-left: 5px; margin-right: 5px">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="8D0E13E6" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+</div>
+
+
+
+        <header>
+		 
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link type="text/css" rel="stylesheet" href="sites/default/files/css/css_Q63EzZU9C-luIDmvjrX6kxRsPlwgdA3YJylT10dYm08.css"
+        media="all" />
+    <link type="text/css" rel="stylesheet" href="sites/default/files/css/css_ggOfPLxzRdzP4NLK-IpQkRDm6P878opbgtE4QgIhOuA.css"
+        media="all" />
+    <style>
+        .marquee-parent {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            height: 30px;
+        }
+
+        .marquee-child {
+            display: block;
+            width: 147px;
+            /* width of your text div */
+            height: 30px;
+            /* height of your text div */
+            position: absolute;
+            animation: marquee 5s linear infinite; /* change 5s value to your desired speed */
+        }
+
+            .marquee-child:hover {
+                animation-play-state: paused;
+                cursor: pointer;
+            }
+
+        @keyframes marquee {
+            0% {
+                left: 100%;
+            }
+
+            100% {
+                left: -147px; /* same as your text width */
+            }
+        }
+    </style>
+
+    <script src="sites/default/files/js/jquery-321.js"></script>
+    <script src="sites/default/files/js/bootstrap.min.js"></script>
+    <script src="sites/default/files/js/jquery.dataTables.min.js"></script>
+    <script src="sites/default/files/js/dataTables.bootstrap.js"></script>
+
+    <script>
+        var fontSize = 100;
+        function set_font_size(fontType) {
+
+            if (fontType === "increase") {
+                if (fontSize < 130) {
+                    fontSize = parseInt(fontSize) + 15;
+                }
+            } else if (fontType === "decrease") {
+                if (fontSize > 70) {
+                    fontSize = parseInt(fontSize) - 15;
+                }
+            } else {
+                fontSize = 100;
+            }
+
+            jQuery(".fontSize").css("font-size", fontSize + "%");
+            //jQuery("#template_three_column").css("font-size",fontSize + "%");
+        };
+
+    </script>
+    <script language="javascript" type="text/javascript">
+        function click() {
+            if (event.button == 2) { alert('Sorry, right click is not allowed...') }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="clearfix">
+
+
+        <section id="block-cmf-content-header-region-block hidden-xs hidden-sm" class="block  clearfix">
+            <noscript class="no_scr">
+                "JavaScript is a standard programming language that is included to provide interactive features, Kindly enable Javascript in your browser. For details visit help page"
+            </noscript>
+            <div class="wrapper common-wrapper  hidden-sm hidden-xs">
+                <div class="container common-container">
+                    <div class="common-left clearfix">
+                        <ul>
+                            <li class="ico-sitemap"><a href="site-map.aspx" title="Sitemap">SiteMap</a></li>
+                        </ul>
+                    </div>
+                    <div class="common-right clearfix">
+                        <ul id="header-nav">
+                            <li><a onclick="set_font_size('increase')" title="Increase font size" href="javascript:void(0);">A<sup>+</sup></a> </li>
+                            <li><a onclick="set_font_size()" title="Reset font size" href="javascript:void(0);">A<sup>&nbsp;</sup></a> </li>
+                            <li><a onclick="set_font_size('decrease')" title="Decrease font size" href="javascript:void(0);">A<sup>-</sup></a> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wrapper header-wrapper fontSize">
+            <div class="header-container">
+                <div class="row">
+                    <div class="col-md-12 col-xs-12 col-sm-12">
+                        <a href="Home.aspx">
+                            <img src="Images/header.png" />
+                        </a>
+                        <a href="Home.aspx">
+                            <img class="hidden-sm hidden-xs" style="float: right; margin-right: 5%" src="Images/LOGO.png" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <nav class="navbar navbar-default fontSize">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <div id="main-menu">
+                    <ul class="menu nav">
+                        <li class="first leaf active"><a href="Home.aspx" title="">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Registration<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class="collapsed"><a href="PreRegistration.aspx">Apply</a></li>
+                                <li class="leaf"><a href="EditRegistration.aspx">Edit / Print</a></li>
+                                <li class="leaf"><a href="EditRegistration.aspx?opt=BXCSj2f6m64%3d">Find</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle active" data-toggle="dropdown">Online Application<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class="collapsed"><a href="AdvtList.aspx?type=lCxUjNjnTp8=">Apply</a></li>
+                                <li class="leaf"><a href="EditApplication.aspx?opt=x3JMxY5kMpk=">Edit</a></li>
+                                <li class="collapsed"><a href="jobupload.aspx">Upload Photo / Signature</a></li>
+                                <li class="leaf"><a href="ConfirmApplication.aspx?opt=QQjOj4QCNFo=">Confirm</a></li>
+                                <li class="leaf"><a href="PrintApplFormStatic.aspx?opt=6tNlqIrOAAk=">Print Application Form / Pay Fees</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="expanded dropdown active">
+                            <a href="#" title="" data-target="#" class="dropdown-toggle active" data-toggle="dropdown">Upload
+                    <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="collapsed"><a href="jobupload.aspx">Photo / Signature</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="expanded dropdown active">
+                            <a href="#" title="" data-target="#" class="dropdown-toggle active" data-toggle="dropdown">Fees
+                    <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="leaf"><a href="PrintApplFormStatic.aspx?opt=6tNlqIrOAAk=">Online / Post Office Challan</a></li>
+                                <li class="collapsed"><a href="KnowFeeStatus.aspx?opt=BXCSj2f6m64=">Check Application Fee Status</a></li>
+                                <li class="leaf"><a href="Paylatefees.aspx?opt=6tNlqIrOAAk=">Late Fees for Application</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="expanded dropdown active">
+                            <a href="#" title="" class="dropdown-toggle active" data-toggle="dropdown">Call Letter / Preference
+                    <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+
+                                <li class="collapsed"><a href="https://ojas.gujarat.gov.in/ojas2/PrintApplForm.aspx?opt=OTMUam2FvAo=">Preliminary Exam Call Letter</a></li>
+                                <li class="leaf"><a href="Preference.aspx?opt=LUbWdmhKlwjaHr/CUNi26A==">Secondary Exam Call Letter / Preference</a></li>
+                            </ul>
+                        </li>
+                        <li class="expanded dropdown active">
+                            <a href="#" title="" class="dropdown-toggle active" data-toggle="dropdown">Other Application
+                    <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="leaf"><a href="AdditionalApp.aspx?opt=UTe3UtUTveU=">Consent for Exam</a></li>
+                                <li class="first leaf active"><a href="candidatewithdrawal.aspx" title="">Withdraw Candidature</a></li>
+                                <li class="leaf"><a href="AdditionalApp.aspx?opt=LUbWdmhKlwjaHr/CUNi26A==">Update Category</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+    </div>
+</body>
+</html>
+
+
+		</header>
+       
+
+        <section>
+
+
+			<div class="row" style="padding-top:10px">
+			
+				<div class="col-md-8 col-sm-12 col-xs-12 col-lg-8">
+					<div class="panel panel-primary">
+						<div class="container texture heading-texture">
+							<div style="float:left;padding:5px">
+                            <i class="fa fa-newspaper-o fa-lg"></i>
+                            Notice Board</div>
+                            <a href="NoticeBoardList.aspx?type=lCxUjNjnTp8=" class="btn" style="color: white; float: right;background-color:#154979;border:1px solid white;margin-right:1%">View All</a>
+						</div>
+						<div class="panel-body" style="height: 450px;background-color:#F3F4F8">
+							<marquee behavior="scroll" direction="UP" class="ojas-small" scrolldelay="500" style="height: 100%">
+
+						 <div id="noticeboard1_rowScrollingNw"><a href='https://ojas.gujarat.gov.in/ojas1/AdvtDetailFiles/85931284_cp.pdf'><img src='Images/arrow.GIF' style='border:0;'/>ભાવનગર મહાનગરપાલિકાના જુદા જુદા સંવર્ગોની તા.૧૯/૦૧/૨૦૨૫ અને ૨૧/૦૧/૨૦૨૫ દરમિયાન CBRT (Computer Based Response Test) દ્રારા  પરિક્ષા  લેવામાં આવેલ હતી.તેની રિસ્પોન્સ શીટ   અને ઉમેદવારોને કોઇપણ પ્રશ્ન બાબતે વાંધા અરજીઓ સ્વિકારવાની સુચનાઓ પ્રસિધ્ધ કરવા બાબત.   - Bhavnagar Municipal Corporation</a> <br /><br /><a href='https://ojas.gujarat.gov.in/PreRegistration.aspx'><img src='Images/arrow.GIF' style='border:0;'/>...ONE TIME REGISTRATION (OTR) એ માત્ર ઉમેદવારોને અરજી કરવા માટેની વધારાની સગવડ છે. આનો અર્થ એ નથી કે OTR કરવાથી જાહેરાત (જે તે જાહેરાત/કોઈપણ જાહેરાત) માટે અરજી થયેલ છે. ઉમેદવારે OJAS દ્વારા પ્રસિધ્ધ થયેલ જે તે જાહેરાત માટે OTR અથવા OTR વગર પોતાની અરજી તે જાહેરાત માટે અલગથી કરવાની રહેશે. - </a> <br /><br /><a href=' https://gpsc-ojas.gujarat.gov.in'><img src='Images/arrow.GIF' style='border:0;'/>...GPSC (ગુજરાત જાહેર સેવા આયોગ) ને લગતી કોઇપણ જાહેરાત ની વિગતો/માહીતી માટે https://gpsc-ojas.gujarat.gov.in વેબસાઇટ નો ઉપયોગ કરવો. - </a> <br /><br /><a href='https://ojas.gujarat.gov.in/KnowROLLNo.aspx?opt=BXCSj2f6m64='><img src='Images/arrow.GIF' style='border:0;'/>...તમારો રોલ નબર જાણવા માટે અહી ક્લિક કરો  - </a> <br /><br /><a href='https://ojas.gujarat.gov.in/KnowConfirmationNo.aspx?opt=wgtAwyTJIQM='><img src='Images/arrow.GIF' style='border:0;'/>...તમારો કન્ફર્મેશન નબર જાણવા માટે અહી ક્લિક કરો  - </a> <br /><br /><a href='https://ojas.gujarat.gov.in/ojas1/AdvtDetailFiles/JMC_202425_5.pdf'><img src='Images/arrow.GIF' style='border:0;'/>Upcoming Advertisement : JMC/202425/10 - ફાયર ટેકનીશીયન (ફાયર પ્રિવેન્શન વિંગ) - 202425 ( Start Date :-  27/01/2025 )</a> <br /><br /><a href='https://ojas.gujarat.gov.in/ojas1/AdvtDetailFiles/JMC_202425_5.pdf'><img src='Images/arrow.GIF' style='border:0;'/>Upcoming Advertisement : JMC/202425/11 - ક્લાર્ક કમ કોમ્પ્યુટર ડેટા એન્ટ્રી ઓપરેટર (ફાયર પ્રિવેન્શન વિંગ) - 202425 ( Start Date :-  27/01/2025 )</a> <br /><br /><a href='https://ojas.gujarat.gov.in/ojas1/AdvtDetailFiles/JMC_202425_5.pdf'><img src='Images/arrow.GIF' style='border:0;'/>Upcoming Advertisement : JMC/202425/5 - ડેપ્યુટી ચીફ ફાયર ઓફિસર (ફાયર પ્રિવેન્શન વિંગ) ( Start Date :-  27/01/2025 )</a> <br /><br /><a href='https://ojas.gujarat.gov.in/ojas1/AdvtDetailFiles/JMC_202425_5.pdf'><img src='Images/arrow.GIF' style='border:0;'/>Upcoming Advertisement : JMC/202425/6 - ડીવીઝનલ ફાયર ઓફિસર (ફાયર પ્રિવેન્શન વિંગ) - 202425 ( Start Date :-  27/01/2025 )</a> <br /><br /><a href='https://ojas.gujarat.gov.in/ojas1/AdvtDetailFiles/JMC_202425_5.pdf'><img src='Images/arrow.GIF' style='border:0;'/>Upcoming Advertisement : JMC/202425/7 - સ્ટેશન ફાયર ઓફિસર (ફાયર પ્રિવેન્શન વિંગ) - 202425 ( Start Date :-  27/01/2025 )</a> <br /><br /><a href='https://ojas.gujarat.gov.in/ojas1/AdvtDetailFiles/JMC_202425_5.pdf'><img src='Images/arrow.GIF' style='border:0;'/>Upcoming Advertisement : JMC/202425/8 - એડમિનિસ્ટ્રેટીવ મેનેજર(ફાયર પ્રિવેન્શન વિંગ) - 202425 ( Start Date :-  27/01/2025 )</a> <br /><br /><a href='https://ojas.gujarat.gov.in/ojas1/AdvtDetailFiles/JMC_202425_5.pdf'><img src='Images/arrow.GIF' style='border:0;'/>Upcoming Advertisement : JMC/202425/9 - લીગલ આસિસ્ટન્ટ (ફાયર પ્રિવેન્શન વિંગ) - 202425 ( Start Date :-  27/01/2025 )</a> <br /><br /></div>
+
+
+                              
+
+							</marquee>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-12 col-xs-12 col-lg-4">
+					<div class="panel panel-primary">
+
+						<div class="container texture heading-texture">
+
+                             
+
+                             <div style="float:left;padding:5px">
+                            <i class="fa fa-check-square-o fa-lg"></i>
+                                Examination Call Letter</div>
+                            <a href="PrintApplForm.aspx?opt=OTMUam2FvAo=" class="btn btn-warning" style="color: white; float: right;background-color:#154979;border:1px solid white;margin-right:1%">View All</a>
+                                  
+                        </div>
+						<div class="panel-body" style="height: 170px;background-color:#F3F4F8">
+						    	<marquee behavior="scroll" direction="UP" id="mymarquee" class="ojas-small" scrolldelay="500" style="height: 100%">
+							<div id="Job_Call1_rowScrollingNw"><a class='NWnavlink' href='PrintApplForm.aspx?opt=OTMUam2FvAo='>GPRB/202324/1 - ગુજરાત પોલીસ દળમાં વર્ગ-૩ સંવર્ગમાં પો.સ.ઇ. કેડર તથા લોકરક્ષક કેડર</a> <br /><br /><a class='NWnavlink' href='PrintApplForm.aspx?opt=OTMUam2FvAo='>GSSSB/202425/254 - Gujarati Stenographer - Grade- II</a> <br /><br /></div>
+
+</marquee> 
+
+
+						</div>
+					</div>
+                   
+
+
+                    <div class="panel panel-primary">
+						<div class="container texture heading-texture">
+
+<div style="float:left;padding:5px">
+                            <i class="fa fa-tasks fa-lg"></i>
+                                 Current Advertisement</div>
+                             
+ <a href="AdvtList.aspx?type=lCxUjNjnTp8=" class="btn btn-warning" style="color: white; float: right;background-color:#154979;border:1px solid white;margin-right:1%">View All</a>
+						</div>
+						<div class="panel-body" style="height: 170px;background-color:#F3F4F8">
+						    <marquee behavior="scroll" direction="UP" class="ojas-small" scrolldelay="500" style="height: 100%">
+
+								<div id="Job_Advt1_rowScrollingNw"><a  href='AdvtDetails.aspx?sid=6kBevlcnHIY=&yr=QfPO8a552M0=&ano=NgjZT0gWeck='>JMC - તબીબી અધિકારી - વર્ગ ૨ (UCHC) - 202425   ( અંતિમ તારીખ 30-January-2025 )</a> <br /><br /><a  href='AdvtDetails.aspx?sid=6kBevlcnHIY=&yr=QfPO8a552M0=&ano=uRTMQY0HCWA='>JMC - ગાયનેકોલોજીસ્ટ (યુ.સી.એચ.સી.) - 202425   ( અંતિમ તારીખ 30-January-2025 )</a> <br /><br /><a  href='AdvtDetails.aspx?sid=6kBevlcnHIY=&yr=QfPO8a552M0=&ano=oYjJbpqKulY='>JMC - પીડીયાટ્રીશીયન (યુ.સી.એચ.સી.) - 202425   ( અંતિમ તારીખ 30-January-2025 )</a> <br /><br /></div>
+
+
+
+                              
+
+						    </marquee>
+
+                       
+						</div>
+					</div>
+                    
+				</div>
+			</div>
+			
+			<div class="row" >
+				<div class="col-md-4 col-sm-12 col-xs-12 col-lg-4">
+					<div class="panel panel-primary">
+						<div class="container texture heading-texture">
+                            <div style="float:left;padding:5px">
+                            <i class="fa fa-cog fa-spin fa-lg"></i>
+                                Help/Query
+                            </div>
+						</div>
+						<div class="panel-body" style="height: 350px;background-color:#F3F4F8">
+							<div class="panel-body">
+								<a href="KnowConfirmationNo.aspx?opt=wgtAwyTJIQM=" style="width: 100%; font-size: 75%" class="btn btn-primary">તમારો કન્ફર્મેશન નબર જાણવા માટે અહી ક્લિક કરો</a><hr />
+								<a href="KnowROLLNo.aspx?opt=BXCSj2f6m64=" style="width: 100%; font-size: 75%" class="btn btn-warning">તમારો રોલ નબર જાણવા માટે અહી ક્લિક કરો</a><hr />
+								<a href="EditRegistration.aspx?opt=BXCSj2f6m64=" style="width: 100%; font-size: 75%" class="btn btn-info">તમારો રજીસ્ટ્રેશન નબર જાણવા માટે અહી ક્લિક કરો</a><hr />
+                                 <a href="KnowFeeStatus.aspx?opt=BXCSj2f6m64=" style="width: 100%; font-size: 75%" class="btn btn-warning">તમારી અરજી ફી નુ સ્ટેટસ જાણવા માટે અહી ક્લિક કરો</a>
+							</div>
+							<div class="panel panel-info">
+								<div class="panel-footer">હેલ્પલાઇન નંબર : 1800 233 5500 &nbsp;&nbsp;&nbsp;&nbsp;સમય - ૦૯:૩૦ થી ૧૮:૧૦</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-12 col-xs-12 col-lg-4">
+					<div class="panel panel-primary">
+                        <div class="container texture heading-texture">
+                            <div style="float:left;padding:5px">
+                            <i class="fa fa-connectdevelop fa-spin fa-lg"></i>
+                                Important Instructions</div>
+						</div>
+						<div class="panel-body" style="height: 350px;background-color:#F3F4F8">
+							<ul style="font-size: 10px">
+                                 <li style="font-weight: bold; color: #FF0000;">ONE TIME REGISTRATION (OTR) એ માત્ર ઉમેદવારોને અરજી દરમ્યાન પોતાની વિગતો વારંવાર ભરવી ન પડે તે માટે ની વધારાની સગવડ છે. 
+                                    <br />આનો અર્થ એ નથી કે ONE TIME REGISTRATION (OTR) કરવાથી જાહેરાત (જે તે જાહેરાત/કોઈપણ જાહેરાત) માટે અરજી થયેલ છે. <br />
+                                    ઉમેદવારે OJAS દ્વારા પ્રસિધ્ધ થયેલ જે તે જાહેરાત માટે OTR અથવા OTR વગર પોતાની અરજી તે જાહેરાત માટે અલગથી કરવાની રહેશે.</li>
+                                <br />
+								<li>Please CONFIRM the application on OJAS site to submit finally</li>
+								<br/>
+								<li>અરજદારોને Print Call Letter optionમાં Confirmation Number અને જન્મ તારીખ નાખવાથી<br />
+									<li>POPUP Blocker Off કરવું જરૂરી છે. દરેક Report New Window માં ખુલશે.</li>
+								<br />
+								<li>Printer Settings માં A4 Size પેજ સેટ કરવુ.</li>
+								<br />
+								<li>જે ઉમેદવારોને ફી ભરવાની બાકી હોય તેઓએ તાત્કાલિક પોસ્ટ ઓફિસમાં ફી ભરી દેવી.</li>
+								<br />
+								<li>Mesg. : અરજદારોએ અનુભવનો ડેટા જાહેરાતમાં દર્શાવ્યા મુજબ નાખવા વિનંતિ.</li>
+								<br />
+								<li>Mesg. : અરજદારોને શૈક્ષણિક લાયકાતો, વઘારાની લાયકાતો અને અન્ય લાયકાતો બરાબર સમજણ પૂર્વક નાખવા વિનંતિ.</li>
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-12 col-xs-12 col-lg-4">
+					<div class="panel panel-primary">
+						<div class="container texture heading-texture">
+                            <div style="float:left;padding:5px">
+                            <i class="fa fa-cloud-download fa-spin fa-lg"></i>
+                                Download App From Playstore</div>
+						</div>
+						<div class="panel-body" style="height: 350px;background-color:#F3F4F8">
+							<a href="https://play.google.com/store/apps/details?id=gov.gujarat.ojas" target="_blank">
+								<img alt="" src="images/1.png" style="height: 100%"><br>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+            
+			<section id="section-2" class="fontSize">
+				<div class="container texture" style="border:2px solid black;border-radius:10px">
+					<div class="row">
+						<div class="col-md-12 col-sm-12">
+							<div class="region region-highlighted">
+								<section id="block-menu-menu-featured-menu" class="block block-menu clearfix">
+                                    <center>
+									<ul class="menu nav">
+                                        <li class="leaf" style="margin-right:1%;">
+											    <a href="Images/HowToApply.pdf"  target="_blank">
+												<img  aria-hidden="true" typeof="foaf:Image"typeof="foaf:Image"src="Images/howapply.png" width="35" height="35" alt="" />
+                                                <span class="featured-title">How to Apply</span>
+                                                </a>
+										</li>
+									
+                                  <li class="leaf" style="margin-right:1%;">
+											    <a href="Images/HowToRegister.pdf"  target="_blank">
+												<img  aria-hidden="true" typeof="foaf:Image"typeof="foaf:Image"src="Images/howapply.png" width="35" height="35" alt="" />
+                                                <span class="featured-title">How to Register</span>
+                                                </a>
+										</li>
+                                     
+                               
+									</ul>
+                                        </center>
+								</section>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<div class="row" style="padding-left:15px;padding-right:15px">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 bgfooter">
+						
+<link type="text/css" rel="stylesheet" href="sites/default/files/css/css_Q63EzZU9C-luIDmvjrX6kxRsPlwgdA3YJylT10dYm08.css"
+    media="all" />
+<link type="text/css" rel="stylesheet" href="sites/default/files/css/css_ggOfPLxzRdzP4NLK-IpQkRDm6P878opbgtE4QgIhOuA.css"
+    media="all" />
+
+<section class="wrapper header-wrapper fontSize">
+    <marquee onmouseover="this.stop();" onmouseout="this.start();">
+<div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
+    <a href="https://india.gov.in/" target="_blank">
+    <img class="negd-logo" style="height: 50px; width: 150px; margin-top: 30px; margin-left: 0%;border:1px solid grey;border-radius:8px;" alt="" src="images/India_Gov.jpg"></a>&nbsp;&nbsp;&nbsp;
+   
+</div>
+<div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
+     <a href="https://digilocker.gov.in/" target="_blank">
+    <img class="negd-logo" style="height: 50px; width: 150px; margin-top: 30px; margin-left: 0%;border:1px solid grey;border-radius:8px;"
+        alt="" src="images/DigitalLocker.png"></a>&nbsp;&nbsp;&nbsp;
+</div>
+<div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
+     <a href="http://digitalindia.gov.in/" target="_blank">
+    <img class="negd-logo" style="height: 50px; width: 150px; margin-top: 30px; margin-left: 0%;border:1px solid grey;border-radius:8px;"
+        alt="" src="images/DigitalIndia.png"></a>&nbsp;&nbsp;&nbsp;
+</div>
+<div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
+      <a href="http://www.nic.in" target="_blank">
+    <img class="negd-logo" style="height: 50px; width: 150px; margin-top: 30px; margin-left: 0%;border:1px solid grey;border-radius:8px;"
+        alt="" src="images/Nic_Logo.jpg"></a>&nbsp;&nbsp;&nbsp;
+</div>
+
+   
+<div class="hidden-xs hidden-xs col-md-2 col-lg-2">
+     <a href="https://play.google.com/store/apps/details?id=gov.gujarat.gpscojas" target="_blank">
+    <img class="negd-logo" style="height: 50px; width: 150px; margin-top: 30px; margin-left: 0%"
+        alt="" src="images/Available_in_Google_Play.png"></a>&nbsp;&nbsp;&nbsp;
+</div>
+    </marquee>
+    
+    <center>
+   &nbsp; <br />
+   
+   Designed and Developed by National Informatics Centre, Gandhinagar, Gujarat  Copyright @ 2017 , Version 2.0<br />
+    <a id="footer1_HyperLink1" href="Disclaimer.aspx">Disclaimer</a>
+</center>
+</section>
+
+ 
+				</div>
+			</div>
+		</section>
+        
+    </form>
+    
+</body>
+</html>
