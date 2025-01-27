@@ -3,86 +3,85 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Contact Us</title>
+  </head>
+  <body>
     <ul>
-      <li><a href="./home.html">home</a></li>
-      <li><a href="./culture.html">cultural</a></li>
+      <li><a href="./home.html">Home</a></li>
+      <li><a href="./culture.html">Cultural</a></li>
       <li><a href="./landmark.html">Landmarks</a></li>
       <li><a href="./cuisine.html">Cuisine</a></li>
       <li><a href="./Contactus.html">Contact Us</a></li>
     </ul>
-  </head>
-  <body>
+    
     <h1>Contact Us</h1>
-    <p>
-      Please file out the form below for any inquiries or to register as a
-      student.
-    </p>
-    <h1>Student Registration From</h1>
-    <label for=""
-      >First Name:
-      <input type="text" name="name" placeholder="enter First name" /> </label
-    ><br /><br />
-    <label for=""
-      >password:
-      <input
-        type="password"
-        name="password"
-        placeholder="enter a password"
-      /> </label
-    ><br /><br />
-    <label for=""
-      >Gender: <input type="radio" name="Gender" />Male
-      <input type="radio" name="Gender" />Female </label
-    ><br /><br />
-    <label for=""
-      >State:
-      <select name="" id="">
-        <option value="State">select your state</option>
-        <option value="State">Gujrat</option>
-        <option value="State">Delhi</option>
-        <option value="State">Gadhinagar</option>
-      </select> </label
-    ><br /><br />
-    <label for=""
-      >Upload resume:
-      <select name="" id="">
-        <option value="">Choose file</option></select
-      >No file chosen </label
-    ><br /><br />
-    <label for=""
-      >Address:
-      <textarea
-        name=""
-        id=""
-        placeholder="Enter your full address"
-      ></textarea></label
-    ><br /><br />
-    <label for=""
-      >Date of Brith:
-      <input type="date" value="dd-mm-yyyy" /> </label
-    ><br /><br />
-    <label for=""
-      >Preferred Interview time:
-      <input type="time" value="--:--" /> </label
-    ><br /><br />
-    <label for=""
-      >Marks:
-      <input type="text" name="Marks" /> </label
-    ><br /><br />
-    <label for="">
-      <input type="submit" name="submit" />
-      <input type="reset" name="reset" /> </label
-    ><br /><br />
-    <h1>More Information</h1>
-    <p>Explore goverment job opportunities on the official OJAS Website:</p>
-    <link rel="stylesheet" href="./_ Online Job Application System _.html" />
+    <p>Please fill out the form below for any inquiries or to register as a student.</p>
+    
+    <h2>Student Registration Form</h2>
+    <form>
+      <label for="firstName">First Name:
+        <input type="text" id="firstName" name="firstName" placeholder="Enter First name" required />
+      </label><br /><br />
+
+      <label for="password">Password:
+        <input type="password" id="password" name="password" placeholder="Enter a password" required />
+      </label><br /><br />
+
+      <label>Gender:
+        <input type="radio" name="gender" value="male" /> Male
+        <input type="radio" name="gender" value="female" /> Female
+      </label><br /><br />
+
+      <label for="subscribe">Subscribe to Newsletter:
+        <input type="checkbox" id="subscribe" name="subscribe" />
+      </label><br /><br />
+
+      <label for="state">State:
+        <select name="state" id="state" required>
+          <option value="">Select your state</option>
+          <option value="Gujrat">Gujrat</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Gadhinagar">Gadhinagar</option>
+        </select>
+      </label><br /><br />
+
+      <label for="resume">Upload Resume:
+        <input type="file" id="resume" name="resume" />
+      </label><br /><br />
+
+      <label for="address">Address:
+        <textarea id="address" name="address" placeholder="Enter your full address" required></textarea>
+      </label><br /><br />
+
+      <label for="dob">Date of Birth:
+        <input type="date" id="dob" name="dob" required />
+      </label><br /><br />
+
+      <label for="interviewTime">Preferred Interview Time:
+        <input type="time" id="interviewTime" name="interviewTime" />
+      </label><br /><br />
+
+      <label for="marks">Marks:
+        <input type="text" id="marks" name="marks" required />
+      </label><br /><br />
+
+      <label>
+        <input type="submit" value="Submit" />
+        <input type="reset" value="Reset" />
+      </label><br /><br />
+    </form>
+
+    <h2>More Information</h2>
+    <p>Explore government job opportunities on the official OJAS Website:</p>
+    <iframe src="https://ojas.gujarat.gov.in/" frameborder="0" width="600" height="400"></iframe>
+
     <a href="./home.html">
       <ul>
-        &lAarr; Back to home
+        ← Back to Home
       </ul>
     </a>
-    <p>Contact us at <a href="">info@incredibleindia.com</a></p>
-    <p>&copy; 2025 incredible India project</p>
+
+    <p>Contact us at <a href="mailto:info@incredibleindia.com">info@incredibleindia.com</a></p>
+    <p>&copy; 2025 Incredible India Project</p>
   </body>
 </html>
