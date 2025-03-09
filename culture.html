@@ -4,21 +4,183 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <ul>
-      <li><a href="./home.html">home</a></li>
-      <li><a href="./culture.html">cultural</a></li>
-      <li><a href="./landmark.html">Landmarks</a></li>
-      <li><a href="./cuisine.html">Cuisine</a></li>
-      <li><a href="./Contactus.html">Contact Us</a></li>
-    </ul>
+   
+    <style>
+      .thead {
+         color: yellow;
+        background-color: rgb(34, 111, 111);
+      }
+      
+      .tbody {
+        color: yellow;
+        background-color: brown;
+      }
+      *{
+         margin: 0;
+         box-sizing: border-box;
+         padding: 0;
+         font-family: Arial, sans-serif;
+        }
+     body {
+         color: #749517;
+         background-color: black;
+        
+         padding: 20px;
+         
+        }
+       a{
+            text-decoration: none;
+        }
+
+      header {
+          background: linear-gradient(to right, #8d132f, #ff4b2b);
+          color: white;
+          text-align: center;
+          padding: 20px;
+           }
+
+      h1,  h3 {
+          font-weight: bold;
+        }
+      h2{
+          color: yellow;
+        }
+
+     nav  {
+         background: #333;
+         position: sticky;
+         padding: 10px;
+         top: 0;
+         z-index: 1000;
+         box-shadow: 0px 4px 10px rgba(184, 56, 56, 0.1);
+       }
+
+     .head {
+         justify-content: center;
+         display: flex;
+         list-style: none;
+        }
+
+        .head li {
+        margin: 0 15px;
+       }
+
+    .head a {
+       text-decoration: none;
+       transition: color 0.3s;
+       color: white;
+       font-weight: bold;
+     }
+
+     .head a:hover {
+     color: #ff4b2b;
+     }
+
+
+     .content {
+         margin: 20px auto;
+          max-width: 800px;
+          padding: 20px;
+          background: white;
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+          border-radius: 10px;
+        }
+
+      .p1 {
+          font-weight: bold;
+          color: #ff4b2b;
+          margin-top: 10px;
+          text-align: center;
+        }
+
+     img {
+         max-width: 500px;
+         width: 100%;
+         margin: 10px auto;
+         display: block;
+         transition: transform 0.3s;
+         border-radius: 10px;
+           }
+
+     img:hover {
+      transform: scale(1.05);
+    }
+
+     ul, ol {
+         padding-left: 20px;
+         margin: 10px 0;
+     }
+
+    ul li, ol li {
+        line-height: 1.6;
+        margin: 5px 0;
+    }
+
+   .footer {
+       color: white;
+       background-color: #222;
+       padding: 20px;
+       text-align: center;
+       margin-top: 20px;
+    }
+
+     .footer a {
+         text-decoration: none;
+         color: #ff4b2b;
+     }  
+    .h2{
+         color: rgb(119, 22, 22);
+          
+      }
+      @media (max-width: 480px)
+       {
+            body {
+                padding: 10px;
+            }
+            nav {
+                text-align: center;
+            }
+            .head {
+                flex-direction: column;
+                align-items: center;
+            }
+            .head li {
+                margin: 20px ;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            .footer {
+                font-size: 20px;
+            }
+       }
+      
+      
+    </style>
   </head>
   <body>
-    <h1>Indian culture</h1>
-    <p>
-      Discover the rich and diverse culture in India,a lend of unity in
-      diversity.
-    </p>
-    <h1>Fastivals</h1>
+    <header>
+      <h1 >Indian culture</h1>
+      <h2>
+        Discover the rich and diverse culture in India,a lend of unity in
+        diversity.
+      </h2>
+      <nav>
+        <ul class="head">
+          <li><a href="./home.html">home</a></li>
+          <li><a href="./culture.html">cultural</a></li>
+          <li><a href="./landmark.html">Landmarks</a></li>
+          <li><a href="./cuisine.html">Cuisine</a></li>
+          <li><a href="./Contactus.html">Contact Us</a></li>
+        </ul>
+      </nav>
+
+    </header>
+    <div class="content">
+      <h1 class="h2">Fastivals</h1>
     <p>
       India celebrates a Variety of festivals that reflect its rich cultural
       heritage and religious diversity.
@@ -40,19 +202,22 @@
         Cherist.
       </li>
       <img src="./diwali.jpg" alt="diwali" />
-      <p>Diwali-The Fastival of lights.</p>
+      <p class="p1">Diwali-The Fastival of lights.</p>
     </ul>
-    <h1>Languages</h1>
+
+    </div>
+    <div class="content">
+      <h1 class="h2">Languages</h1>
     <p>
       India is a linguistic treasure trove with 22 officially recognized
       lenguges and thousands of regional dialects:
     </p>
-    <table border="1" style="border-collapse: collapse;" >
-      <thead>
+    <table border="1" style="border-collapse: collapse">
+      <thead class="thead">
         Popular Languages of India
       </thead>
-      <tbody>
-        <tr>
+      <tbody class="tbody">
+        <tr class="thead">
           <td>Language</td>
           <td>Region</td>
         </tr>
@@ -74,10 +239,13 @@
         </tr>
       </tbody>
     </table>
-    <ol type="">&#9658;
-      Fan Fact
+    <ol type="">
+      &#9658; Fan Fact
     </ol>
-    <h1>Traditional Attire</h1>
+
+    </div>
+    <div class="content">
+      <h1 class="h2">Traditional Attire</h1>
     <p>
       India Traditional clothing Varies by region,shocasing its cultural
       diversity;
@@ -92,15 +260,19 @@
         <b>Dhoti:</b>Traditional men's wear in southern and eastern India.
       </li>
       <img src="./saree.jpg" alt="saree" />
-      <p>Traditional Saree-Grace and Elegant</p>
+      <p class="p1">Traditional Saree-Grace and Elegant</p>
     </ul>
-    <a href="./home.html">
-      <ul>
-        ← Back to Home
-      </ul>
-    </a>
-
-    <p>Contact us at <a href="">info@incredibleindia.com</a></p>
-    <p>&copy; 2025 incredible India project</p>
+    </div>
+    <div class="footer">
+      <a  href="./home.html">
+        <ul>
+          ← Back to Home
+        </ul>
+      </a>
+  
+      </a>
+      <p >Contact us at <a href="">info@incredibleindia.com</a></p>
+      <p >&copy; 2025 incredible India project</p>
+    </div>
   </body>
 </html>

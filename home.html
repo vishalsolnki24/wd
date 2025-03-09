@@ -1,70 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <h1>Welcome to <mark>Incredible India</mark></h1>
-    <h3>Discover the diversity,beauly,and rich  heritage of India!</h3>
-    <ul>
-        <li><a href="./home.html">home</a></li>
-        <li><a href="./culture.html">cultural</a></li>
-         <li><a href="./landmark.html">Landmarks</a></li>
-        <li><a href="./cuisine.html">Cuisine</a></li>
-       <li><a href="./Contactus.html">Contact Us</a></li>
-    </ul>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home page</title>
+
+</head>
+   <style>  
+      *{
+         margin: 0;
+         box-sizing: border-box;
+         padding: 0;
+         font-family: Arial, sans-serif;
+        }
+     body {
+         color: #749517;
+         padding: 20px;
+         background-image: linear-gradient( #FF9933,#ffffff,#138808);
+        }
+        
+       a{
+            text-decoration: none;
+        }
+
+      header {
+          background: linear-gradient(to right, #8d132f, #ff4b2b);
+          color: white;
+          text-align: center;
+          padding: 20px;
+           }
+
+      h1,  h3 {
+          font-weight: bold;
+        }
+      h2{
+          color: yellow;
+        }
+
+     nav  {
+         background: #333;
+         position: sticky;
+         padding: 10px;
+         top: 0;
+         z-index: 1000;
+         box-shadow: 0px 4px 10px rgba(184, 56, 56, 0.1);
+       }
+
+     .head {
+         justify-content: center;
+         display: flex;
+         list-style: none;
+        }
+
+        .head li {
+        margin: 0 15px;
+       }
+
+    .head a {
+       text-decoration: none;
+       transition: color 0.3s;
+       color: white;
+       font-weight: bold;
+     }
+
+     .head a:hover {
+     color: #ff4b2b;
+     }
+     .content {
+         margin: 20px auto;
+          max-width: 800px;
+          padding: 20px;
+          background: white;
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+          border-radius: 10px;
+        }
+      .p1 {
+          font-weight: bold;
+          color: #ff4b2b;
+          margin-top: 10px;
+          text-align: center;
+        }
+     img {
+         max-width: 500px;
+         width: 100%;
+         margin: 10px auto;
+         display: block;
+         overflow: hidden;
+         /* transition: transform 1.2s; */
+         border-radius: 10px;
+         transition: transform 0.3s ease-in-out;
+         }
+         img:hover {
+           transform: scale(1.05);
+          }
+        ul li, ol li {
+         line-height: 1.6;
+          margin : 5px 0;
+         }
+
+         .footer {
+           color: white;
+            background-color: #222;
+            padding: 20px;
+           text-align: center;
+             margin-top: 20px;
+         }
+
+         .footer a {
+         text-decoration: none;
+         color: #ff4b2b;
+        }  
+         .h2{
+         color: rgb(119, 22, 22);
+         }
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+           
+            .head {
+                flex-direction: column;
+                align-items: center;
+            }
+            .head li {
+                margin: 20px ;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            .footer {
+                font-size: 20px;
+            }
+        }
+
+   
+    </style>
 </head>
 <body>
-    <h2>About India</h2>
+    <header>
+        <h1>Welcome to <mark>Incredible India</mark></h1>
+        <h2 >Discover the diversity, beauty, and rich heritage of India!</h2>
+        <nav>
+            <ul class="head" >
+                <li ><a href="./home.html">Home</a></li>
+                <li ><a href="./culture.html">Culture</a></li>
+                <li ><a href="./landmark.html">Landmarks</a></li>
+                <li   ><a href="./cuisine.html">Cuisine</a></li>
+                <li ><a href="./Contactus.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+        <h2 class="h2" >About India</h2>
     <p>India is a land of incredible diversity From the snow-capped peaks of the <i>Himalayas </i>
      to the serene backwaters of Kerala,everycomer of India tells a unique story.India is the <b>second-most</b>
     <br><b>populaous country </b>in the world and boasts a history spanning thousands of years. Its rich traditious have left an indelible mark on the world.</p>
     <img src="./India_Map_Animation_Created_by_samnad.s_Kudappanamoodu.gif" >
     <p><blockquote>India: A land of cultural and geographical diversity</blockquote></p>
-    <p><blockquote>"Unity in diversity is not just a slogen in India but a way of life." </blockquote></p>
-    <p>Highlights df India include :</p>
-    <ul>
-        <li><b>Architecture:</b>Majestice monuments like the taj mahal and Rad Fort.</li>
-        <li><b>Cuisine:</b>Diverse flaverse from spicy curries to sweet desserts.</li>
-        <li><b>culture:</b>Vibrant fesitivalse,classical dances,and colorful attire.</li>
-    </ul>
-    <h1>Famous Landmarks</h1>
-    <p>India is home to <mark>29 UNESCO world Heritage Sites,</mark>making it a paradise for history and architecture enthusiasts.</p>
-    <ol>
-        <li>
-       <img src="./tajmahal.jpg" alt="tajmahal">
-        <p>The taj Mahal, a symbol of eternal love</p>
-        </li>
-        <li>
-            <img src="./qutubminar.jpg" alt="minara">
-            <p>The Qutub Minar,an architectural marvel in Delhi</p>
-        </li>
-    </ol>
+
+    </div>
+    <div class="content">
+        <p class="h2">Highlights df India include :</p>
+        <ul >
+            <li><b>Architecture:</b>Majestice monuments like the taj mahal and Rad Fort.</li>
+            <li><b>Cuisine:</b>Diverse flaverse from spicy curries to sweet desserts.</li>
+            <li><b>culture:</b>Vibrant fesitivalse,classical dances,and colorful attire.</li>
+        </ul>
+        <h1 class="h2" >Famous Landmarks</h1>
+        <p>India is home to <mark>29 UNESCO world Heritage Sites,</mark>making it a paradise for history and architecture enthusiasts.</p>
+        <ol>
+            <li>
+           <img src="./tajmahal.jpg" alt="tajmahal">
+            <p class="p1">The taj Mahal, a symbol of eternal love</p>
+            </li>
+            <li>
+                <img src="./qutubminar.jpg" alt="minara">
+                <p class="p1">The Qutub Minar,an architectural marvel in Delhi</p>
+            </li>
+        </ol>
+
+    </div>
+    <div class="content">
+        
     <p><i>Don't miss exploring the intricate carvings,towering minarets and breathtaking landscapes!</i></p>
-    <h1>Indian Culture</h1>
+    <h1  class="h2">Indian Culture</h1>
     <p>India's <b>cultural heritage</b> is a blend of various tradition,languages,and religions. Each region its unique identity and tradition that are celebrated through festivals and daily life .Here are some <br>highlights:</p>
     <ul>
         <li>classical dances: Bharatanatyam,Kathak,andOdissi.</li>
         <li>Music: Traditional instruments like the sitar,table,and veena.</li>
         <li>Festivals : Diwali,Holi,Eid and Chrimas bring people together in celebretion.</li>
         <img src="./dance.jpg" alt="classical dance">
-        <p>A glimpse of Indian classical Dance</p>
+        <p >A glimpse of Indian classical Dance</p>
     </ul>
-   
-    <h1>Delicious Indian Cuisine</h1>
+
+    </div>
+    <div class="content">
+        <h1 class="h2">Delicious Indian Cuisine</h1>
     <p>Indian food is as diverse as its culture. From the fiery curries of the south to the hearty bread of the north,there's something for everyone. popular dishes include: </p>
     <ul>
         <li><b>Nourth Indian:</b>Butter chicken,naan,andpaneer tikka.</li>
         <li> <b>South Indian:</b>Dosa,idli,sambhar.</li>
         <li><b>Street Food :</b>Pani puri,chaat,and vada pav.</li>
         <img src="./biryani.jpg" alt="biryani">
-        <p>Delicious Hederabadi Biryani</p>
+        <p class="p1">Delicious Hederabadi Biryani</p>
         <img src="./street_food.jpg" alt="street_food">
-        <p>Colorful and flavorful Indian street food.</p>
+        <p class="p1">Colorful and flavorful Indian street food.</p>
     </ul>
-    <p>Contact us at <a href="">info@incredibleindia.com</a></p>
-    <p>&copy; 2025 incredible India project</p>
-    <p>Follow us on <a href="">Facebook</a> | <a href="">Twitter</a></p>
 
+    </div>
+    <div  class="footer">
+        <p >Contact us at <a href="">info@incredibleindia.com</a></p>
+        <p >&copy; 2025 incredible India project</p>
+        <p >Follow us on <a href="">Facebook</a> | <a href="">Twitter</a></p>
+    </div>
 </body>
 </html>

@@ -4,83 +4,255 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <ul>
-      <li><a href="./home.html">home</a></li>
-      <li><a href="./culture.html">cultural</a></li>
-      <li><a href="./landmark.html">Landmarks</a></li>
-      <li><a href="./cuisine.html">Cuisine</a></li>
-      <li><a href="./Contactus.html">Contact Us</a></li>
-    </ul>
+
+    <style>
+   
+      .h2{
+         color: rgb(119, 22, 22);
+          
+      }
+      *{
+         margin: 0;
+         box-sizing: border-box;
+         padding: 0;
+         font-family: Arial, sans-serif;
+        }
+     body {
+         color: #749517;
+         background-color: black;
+         
+         padding: 20px;
+        
+        }
+       a{
+            text-decoration: none;
+        }
+
+      header {
+          background: linear-gradient(to right, #8d132f, #ff4b2b);
+          color: white;
+          text-align: center;
+          padding: 20px;
+           }
+
+      h1,  h3 {
+          font-weight: bold;
+        }
+      h2{
+          color: yellow;
+        }
+
+     nav  {
+         background: #333;
+         position: sticky;
+         padding: 10px;
+         top: 0;
+         z-index: 1000;
+         box-shadow: 0px 4px 10px rgba(184, 56, 56, 0.1);
+       }
+
+     .head {
+         justify-content: center;
+         display: flex;
+         list-style: none;
+        }
+
+        .head li {
+        margin: 0 15px;
+       }
+
+    .head a {
+       text-decoration: none;
+       transition: color 0.3s;
+       color: white;
+       font-weight: bold;
+     }
+
+     .head a:hover {
+     color: #ff4b2b;
+     }
+
+
+     .content {
+         margin: 20px auto;
+          max-width: 800px;
+          padding: 20px;
+          background: white;
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+          border-radius: 10px;
+        }
+
+      .p1 {
+          font-weight: bold;
+          color: #ff4b2b;
+          margin-top: 10px;
+          text-align: center;
+        }
+
+     img {
+         max-width: 500px;
+         width: 100%;
+         margin: 10px auto;
+         display: block;
+         transition: transform 0.3s;
+         border-radius: 10px;
+           }
+
+     img:hover {
+      transform: scale(1.05);
+    }
+
+     ul, ol {
+         padding-left: 20px;
+         margin: 10px 0;
+     }
+
+    ul li, ol li {
+        line-height: 1.6;
+        margin: 5px 0;
+    }
+
+   .footer {
+       color: white;
+       background-color: #222;
+       padding: 20px;
+       text-align: center;
+       margin-top: 20px;
+    }
+
+     .footer a {
+         text-decoration: none;
+         color: #ff4b2b;
+     }  
+    .h2{
+         color: rgb(119, 22, 22);
+          
+      }
+      @media (max-width: 480px)
+       {
+            body {
+                padding: 10px;
+            }
+            nav {
+                text-align: center;
+            }
+            .head {
+                flex-direction: column;
+                align-items: center;
+            }
+            .head li {
+                margin: 20px ;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            .footer {
+                font-size: 20px;
+            }
+       }
+     
+     
+      
+  </style>
   </head>
   <body>
-    <h1>Popular Indian Dishes</h1>
-    <p>
-      Explore the flavors of India through its diverse and rich culinary
-      traditions!
-    </p>
-    <audio controls>
-      <source src="./titanium.mp3" >
-    </audio>
-    <h1>North Indian cuisine</h1>
-    <p>
-      North India is known for its rich,aromatic,and flavorful Dishes often
-      cooked with ghee and spices :
-    </p>
-    <ul>
-      <li>
-        <b>Biryani:</b>A fragrant rice dish made woth aromatic spices and meat
-        or vegetable>
-      </li>
-      <li>
-        <b>Butter Chicken:</b>a creamy,tometo-based curry that's favorite
-        woldwide.
-      </li>
-      <li><b>Paneer Tikka:</b>Marinated panner cubes grilled to perfection.</li>
-      <img src="./biryani.jpg" alt="biryani" />
-      <p>Aromatic and flavorful Biryani</p>
-    </ul>
-    <h1>South Indian Cuisine</h1>
-    <p>
-      South Indiad office a wide arry of dishes with a prefect blend of spices
-      and tangy flavors:
-    </p>
-    <ul>
-      <li>
-        <b>Masala Dosa :</b>A Crispy rice crepe stuffed with spicy potato
-        filling.
-      </li>
-
-      <li>
-        <b>Idli and Sambar:</b>Soft rice cakes served with a tangy lentil-based
-        vegetable stew.
-      </li>
-      <li>
-        <b>chettinad Chicken:</b>A fiery,flavorful chicken dish from tamil Nadu.
-      </li>
-      <img src="./dosa.jpg" alt="dosa" />
-      <p>south Indian favorite : Mashala Dosa</p>
-    </ul>
-    <h1>Sweet Delights</h1>
-    <p>
-      No Indian meal is complete without indulging is some mouth-watering
-      desserts:
-    </p>
-    <ul>
-      <li><b>Gulab Jamun:</b>Frind milk solids souked in sugar syrup.</li>
-      <li><b>Rasgula:</b>Soft and spongy cheese balls in light sugar syrup.</li>
-      <li>
-        <b>Payasam:</b>A south Indian dessert made of milk,rice and jaggery.
-      </li>
-      <img src="./gulab_jamun.jpg" alt="gulab jamun" />
-      <p>Irresistible Gulab jamun</p>
-      <a href="./home.html">
-        <ul>
-          ← Back to Home
+    <header>
+      <h1 >Popular Indian Dishes</h1>
+      <h2>
+        Explore the flavors of India through its diverse and rich culinary
+        traditions!
+      </h2>
+      <nav>
+        <ul class="head">
+          <li><a href="./home.html">home</a></li>
+          <li><a href="./culture.html">cultural</a></li>
+          <li><a href="./landmark.html">Landmarks</a></li>
+          <li><a href="./cuisine.html">Cuisine</a></li>
+          <li><a href="./Contactus.html">Contact Us</a></li>
         </ul>
-      </a>
+      </nav>
+    </header>
+    <div class="content">
+      <audio controls>
+        <source src="./titanium.mp3" >
+      </audio>
+      <h1  class="h2">North Indian cuisine</h1>
+      <p>
+        North India is known for its rich,aromatic,and flavorful Dishes often
+        cooked with ghee and spices :
+      </p>
+      <ul>
+        <li>
+          <b>Biryani:</b>A fragrant rice dish made woth aromatic spices and meat
+          or vegetable>
+        </li>
+        <li>
+          <b>Butter Chicken:</b>a creamy,tometo-based curry that's favorite
+          woldwide.
+        </li>
+        <li><b>Paneer Tikka:</b>Marinated panner cubes grilled to perfection.</li>
+        <img src="./biryani.jpg" alt="biryani" />
+        <p class="p1">Aromatic and flavorful Biryani</p>
+      </ul>
+    </div>
+    <div class="content">
+      <h1  class="h2">South Indian Cuisine</h1>
+      <p>
+        South Indiad office a wide arry of dishes with a prefect blend of spices
+        and tangy flavors:
+      </p>
+      <ul>
+        <li>
+          <b>Masala Dosa :</b>A Crispy rice crepe stuffed with spicy potato
+          filling.
+        </li>
   
-    <p>Contact us at <a href="">info@incredibleindia.com</a> </p>
-    <p>&copy; 2025 incredible India project </p>
+        <li>
+          <b>Idli and Sambar:</b>Soft rice cakes served with a tangy lentil-based
+          vegetable stew.
+        </li>
+        <li>
+          <b>chettinad Chicken:</b>A fiery,flavorful chicken dish from tamil Nadu.
+        </li>
+        <img src="./dosa.jpg" alt="dosa" />
+        <p class="p1">south Indian favorite : Mashala Dosa</p>
+      </ul>
+    </div>
+    <div class="content">
+      <h1  class="h2">Sweet Delights</h1>
+      <p>
+        No Indian meal is complete without indulging is some mouth-watering
+        desserts:
+      </p>
+      <ul>
+        <li><b>Gulab Jamun:</b>Frind milk solids souked in sugar syrup.</li>
+        <li><b>Rasgula:</b>Soft and spongy cheese balls in light sugar syrup.</li>
+        <li>
+          <b>Payasam:</b>A south Indian dessert made of milk,rice and jaggery.
+        </li>
+        <img src="./gulab_jamun.jpg" alt="gulab jamun" />
+        <p class="p1">Irresistible Gulab jamun</p>
+      </ul>
 
+    </div>
+  
+    
+    
+   
+   
+      <div class="footer">
+        <a  href="./home.html">
+          <ul>
+            ← Back to Home
+          </ul>
+        </a>
+    
+        </a>
+        <p >Contact us at <a href="">info@incredibleindia.com</a></p>
+        <p >&copy; 2025 incredible India project</p>
+      </div>
   </body>
 </html>

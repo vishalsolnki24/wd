@@ -3,21 +3,196 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <ul>
-      <li><a href="./home.html">home</a></li>
-      <li><a href="./culture.html">cultural</a></li>
-      <li><a href="./landmark.html">Landmarks</a></li>
-      <li><a href="./cuisine.html">Cuisine</a></li>
-      <li><a href="./Contactus.html">Contact Us</a></li>
-    </ul>
-    <h1>Famous Landmarks in India</h1>
-    <h2>
-      explore the iconic Landmarks that difine the heritage and history of
-      india.
+   
     </h2>
+    <style>
+      
+      
+     
+      .tbody{
+        color: brown;
+        background-color: burlywood;
+      }
+      .td{
+        color: rgb(149, 175, 14);
+        background-color: rgb(45, 132, 127);
+      }
+      *{
+         margin: 0;
+         box-sizing: border-box;
+         padding: 0;
+         font-family: Arial, sans-serif;
+        }
+     body {
+         color: #749517;
+         background-color: #f4f4f4;
+         background-image: url(./OIP\ \(1\).jpg);
+         padding: 20px;
+         background-size: cover;
+           background-attachment: fixed;
+        }
+       a{
+            text-decoration: none;
+        }
+
+      header {
+          background: linear-gradient(to right, #8d132f, #ff4b2b);
+          color: white;
+          text-align: center;
+          padding: 20px;
+           }
+
+      h1,  h3 {
+          font-weight: bold;
+        }
+      h2{
+          color: yellow;
+        }
+
+     nav  {
+         background: #333;
+         position: sticky;
+         padding: 10px;
+         top: 0;
+         z-index: 1000;
+         box-shadow: 0px 4px 10px rgba(184, 56, 56, 0.1);
+       }
+
+     .head {
+         justify-content: center;
+         display: flex;
+         list-style: none;
+        }
+
+        .head li {
+        margin: 0 15px;
+       }
+
+    .head a {
+       text-decoration: none;
+       transition: color 0.3s;
+       color: white;
+       font-weight: bold;
+     }
+
+     .head a:hover {
+     color: #ff4b2b;
+     }
+
+
+     .content {
+         margin: 20px auto;
+          max-width: 800px;
+          padding: 20px;
+          background: white;
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+          border-radius: 10px;
+        }
+
+      .p1 {
+          font-weight: bold;
+          color: #ff4b2b;
+          margin-top: 10px;
+          text-align: center;
+        }
+
+     img {
+         max-width: 500px;
+         width: 100%;
+         margin: 10px auto;
+         display: block;
+         transition: transform 0.3s;
+         border-radius: 10px;
+           }
+
+     img:hover {
+      transform: scale(1.05);
+    }
+
+     ul, ol {
+         padding-left: 20px;
+         margin: 10px 0;
+     }
+
+    ul li, ol li {
+        line-height: 1.6;
+        margin: 5px 0;
+    }
+
+   .footer {
+       color: white;
+       background-color: #222;
+       padding: 20px;
+       text-align: center;
+       margin-top: 20px;
+    }
+
+     .footer a {
+         text-decoration: none;
+         color: #ff4b2b;
+     }  
+    .h2{
+         color: rgb(119, 22, 22);
+          
+      }
+      @media (max-width: 480px)
+       {
+            body {
+                padding: 10px;
+                background-image: url(./OIP\ \(1\).jpg);
+       
+               background-size: cover;
+              background-attachment: fixed;
+            }
+            nav {
+                text-align: center;
+            }
+            .head {
+                flex-direction: column;
+                align-items: center;
+            }
+            .head li {
+                margin: 20px ;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            .footer {
+                font-size: 20px;
+            }
+       }
+     
+     
+  </style>
+    
   </head>
   <body>
-    <h1>iconic Monuments</h1>
+    <header>
+      <h1 >Famous Landmarks in India</h1>
+      <h2>
+        explore the iconic Landmarks that difine the heritage and history of
+        india.
+        </h2>
+    <nav>
+
+    
+      <ul class="head">
+        <li><a href="./home.html">home</a></li>
+        <li><a href="./culture.html">cultural</a></li>
+        <li><a href="./landmark.html">Landmarks</a></li>
+        <li><a href="./cuisine.html">Cuisine</a></li>
+        <li><a href="./Contactus.html">Contact Us</a></li>
+      </ul>
+    </nav>
+      
+      
+    </header>
+    
+    <div class="content">
+      <h1 class="h2" >iconic Monuments</h1>
     <p>
       India is home to some of the most awe-inspring Landmarks in the
       world.these monuments reflect its rich cultural haritage and historical
@@ -41,17 +216,20 @@
         Indo-Iscamic architecture.
       </li>
       <img src="./redfort.jpg" alt="red fort" />
-      <p>The Majestice Red Fort in Dilhi</p>
+      <p  >The Majestice Red Fort in Dilhi</p>
     </ul>
-    <h1>Indian states and capitals</h1>
+
+    </div>
+    <div class="content">
+      <h1 class="h2">Indian states and capitals</h1>
     <p>
       India is a union of states ,each with its unique cultural and geographical
       identity. Here's a ditailed table listing some States ,their capitals ,and
       key deta:
     </p>
-    <h1 align="center">List of Indian States</h1>
+    <h1  class="h2" align="center">List of Indian States</h1>
     <table border="1" width="100%" height="100%" style="border-collapse: collapse;">
-      <thead>
+      <thead class="thead">
         <tr  >
           <th rowspan="2">States</th>
           <th rowspan="2">Capital</th>
@@ -63,7 +241,7 @@
           <th>Rural</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="tbody">
         
        
         <tr>
@@ -88,13 +266,16 @@
           <td>Hindi</td>
         </tr>
         <tr>
-          <td colspan="5">
+          <td class="td"  colspan="5">
             Note:Data is indicative and may not represent not official value
           </td>
         </tr>
       </tbody>
     </table>
-    <h1>Fun Fact</h1>
+
+    </div>
+    <div class="content">
+      <h1 class="h2">Fun Fact</h1>
     <p>
       Did you know ?India has the largest postal network in the world, with over
       1,50,000 post offices, including one Located on a floating structure in
@@ -102,16 +283,24 @@
     </p>
     <ol>
       <img src="./dal_lake.jpg" alt=" Dal lake" />
-      <p>the floating post office in Dal Lake ,srinagar</p>
+      <p class="p1">the floating post office in Dal Lake ,srinagar</p>
     </ol>
-    <a href="./home.html">
-      <ul>
-        ← Back to Home
-      </ul>
-    </a>
 
-    </a>
-    <p>Contact us at <a href="">info@incredibleindia.com</a></p>
-    <p>&copy; 2025 incredible India project</p>
+    </div>
+    
+    
+  
+    <div class="footer">
+      <a  href="./home.html">
+        
+          ← Back to Home
+        
+      </a>
+  
+      </a>
+      <p >Contact us at <a href="">info@incredibleindia.com</a></p>
+      <p >&copy; 2025 incredible India project</p>
+    </div>
+  
   </body>
 </html>
